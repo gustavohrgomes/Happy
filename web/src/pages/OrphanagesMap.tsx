@@ -25,7 +25,7 @@ function OrphanagesMap() {
           <img src={mapMarkerImg} alt="Happy"/>
 
           <h2>Escolha um orfanato no mapa</h2>
-          <p>Muitas crianças estão esperando a sua visita :)</p>
+          <p>Muitas crianças estão esperando a sua visita 😀</p>
         </header>
 
         <footer>
@@ -48,7 +48,7 @@ function OrphanagesMap() {
         >
           <Popup closeButton={false} minWidth={240} maxWidth={240} className="map-popup">
             Casa betania
-            <Link to="">
+            <Link to="/orphanages/1">
               <FiArrowRight size={20} color="#fff" />
             </Link>
           
@@ -56,7 +56,7 @@ function OrphanagesMap() {
         </Marker>
       </Map>
 
-      <Link to="" className="create-orphanage">
+      <Link to="/orphanages/create" className="create-orphanage">
         <FiPlus size={32} color="#FFF"/>
       </Link>
     </div>

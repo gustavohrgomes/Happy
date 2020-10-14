@@ -24,7 +24,7 @@ export default {
       relations: ['images']
     });
 
-    return response.json(orphanageView.render);
+    return response.json(orphanageView.render(orphanage));
   },
   
   async create(request: Request, response: Response) {

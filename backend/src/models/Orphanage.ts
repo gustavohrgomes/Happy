@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn } from 'typeorm';
+import Image from './Image';
 
 @Entity('orphanages') // decorator utilizado pelo typeorm para associar as tabelas com as classes. OBS: Muito parecido com Data Annotations do .NET
 export default class Orphanage {
@@ -26,4 +27,10 @@ export default class Orphanage {
 
   @Column()
   open_on_weekends: boolean;
+
+  @OneToMany(() => Image, image => image.orphanage, {
+    cascade: ['insert', 'update']
+  })
+  @JoinColumn({ name: 'orphanage_id' })
+  images: Image[];
 }

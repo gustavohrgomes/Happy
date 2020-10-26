@@ -17,9 +17,9 @@
 
 ## :bookmark: Sobre
 
-Não é novidade para ninguém que diversas pessoas visitam os orfanatos de suas cidades, afim de brincar, levar brinquedos, proporcionar algo que traga um sentimento de felicidade para aquelas crinças. 
+Não é novidade para ninguém que diversas pessoas visitam as casas de acolhimento institucional de suas cidades, afim de brincar, levar brinquedos, proporcionar algo que traga um sentimento de felicidade para aquelas crinças. 
 
-E foi pensando nisso que o **Happy** foi criado. Afim de facilitar a vida dessas pessoas, o Happy oferece um serviço onde essas pessoas podem encontrar os orfanatos de suas cidade de uma maneira mais rápida e eficiente.
+E foi pensando nisso que o **Happy** foi criado. Afim de facilitar a vida dessas pessoas, o Happy é uma aplicação que conecta pessoas à casas de acolhimento institucional para fazer o dia de muitas crianças mais feliz :purple_heart:
 
 Essa aplicação foi desenvolvida durante o evento **Next Level Week**, oferecido pela [Rocketseat](https://www.rocketseat.com.br).
 
@@ -36,18 +36,17 @@ Essas são as tecnologias que foram utilizadas até o momento.
 
   - [React](https://reactjs.org/)
   - [Typescript](https://www.typescriptlang.org/)
+  - [Expo](https://expo.io/)
   - [Leaflet](https://react-leaflet.js.org/)
   - [Mapbox](https://www.mapbox.com/)
 
 ### Back-End
 
-  > Em Desenvolvimento
-
-  <!-- - [NodeJS](https://nodejs.org/en/)
+  - [NodeJS](https://nodejs.org/en/)
   - [Express](https://expressjs.com/pt-br/)
   - [Typescript](https://classic.yarnpkg.com/)
-  - [KnexJS](http://knexjs.org/)
-  - [SQLite](https://www.sqlite.org/index.html) -->
+  - [TypeORM](https://typeorm.io)
+  - [SQLite](https://www.sqlite.org/index.html)
 
 ## :computer: Web Screenshots
 
@@ -56,11 +55,10 @@ Essas são as tecnologias que foram utilizadas até o momento.
   <img src="https://github.com/gustavohrgomes/Happy/blob/main/.github/images/map.png"  width="400px">
 </div>
 
-<br/>
-
-> Até o momento, somente essas duas páginas foram desenvolvidas durante o evento
-
-<br/>
+<div width="" style="display: flex; align-items: 'center'; justify-content: space-evenly">
+  <img src="https://github.com/gustavohrgomes/Happy/blob/main/.github/images/landing.png" width="400px">
+  <img src="https://github.com/gustavohrgomes/Happy/blob/main/.github/images/map.png"  width="400px">
+</div>
 
 ## :construction_worker: Como rodar o projeto
 
@@ -68,6 +66,25 @@ Essas são as tecnologias que foram utilizadas até o momento.
 # Clone Repository
 $ git clone https://github.com/gustavohrgomes/Happy.git
 ```
+
+### 📩 Executando a API
+
+```bash
+# Navegue até a pasta bakend
+$ cd Happy/backend
+
+# Instale as dependências
+$ yarn install
+
+# Execute as migrations
+$ yarn typeorm migration:run
+
+# Execute a aplicação
+$ yarn dev
+```
+Para testar a api, clique no botão abaixo:
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=happy%20api&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fgustavohrgomes%2FHappy%2Fmain%2F.github%2Finsomnia%2Fhappy-api.json)
 
 ### 💻 Executando o projeto Web
 
@@ -82,3 +99,19 @@ $ yarn install
 $ yarn start
 ```
 Navegue http://localhost:3000/ no seu navegador para ver os resultados.
+
+### 📱 Executando o projeto mobile
+
+```bash
+# Navegue até a pasta web
+$ cd Happy/mobile
+
+# Instale as dependências
+$ yarn install
+
+# Execute a aplicação
+$ expo start
+```
+Escaneie o QR Code gerado pelo expo com o seu smartphone ou abra junto de um emulador
+
+**OBS: Mude o IP do arquivo `services/api.tsx` para o IP gerado pelo expo, caso contrário a aplicação não funcionará**
